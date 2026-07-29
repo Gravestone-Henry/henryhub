@@ -1,227 +1,398 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gravestone Henry | Hub</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛧</text></svg>">
+    <title>Gravestone Henry | FullStack Developer Hub</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪦</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#050505',
+                        cardbg: '#0d0d0f',
+                        bordercolor: '#1f1f23',
+                        tcohlGreen: '#22c55e', /* Verde referência henry */
+                        tcohlPink: '#ec4899',  /* Rosa referência lynlyn */
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Permanent+Marker&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
 
         body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Fira Code', monospace;
+            background-color: #050505;
+            color: #a1a1aa;
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        .neon-border {
-            box-shadow: 0 0 10px #5e199e, inset 0 0 5px #5e199e;
-            border: 1px solid #5e199e;
+        .project-card {
+            background-color: #0d0d0f;
+            border: 1px solid #1f1f23;
+            transition: all 0.25s ease-in-out;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(94, 25, 158, 0.3);
-            border-color: #00ced1;
+            border-color: #22c55e;
+            box-shadow: 0 4px 25px -4px rgba(34, 197, 94, 0.12);
+            transform: translateY(-2px);
         }
 
-        .henry-bubble {
-            position: relative;
-            background: #1a1a1a;
-            border: 2px solid #5e199e;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
         }
-
-        .henry-bubble::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 20px;
-            border-width: 10px 10px 0;
-            border-style: solid;
-            border-color: #5e199e transparent;
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f1f23;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ec4899;
         }
     </style>
 </head>
-<body class="p-6 md:p-20">
+<body class="p-6 md:p-16 antialiased selection:bg-tcoalPink selection:text-white">
 
-    <header class="max-w-4xl mx-auto mb-16">
-        <div class="henry-bubble p-4 rounded-lg mb-6">
-            <p class="text-cyan-400 text-sm md:text-base">
-                Henry: "Ótimo, mais um bisbilhotando meus arquivos. Clica logo em algo ou dá o fora, minha paciência tem 128mb de limite."
+    <!-- Top Bar / Professional Header Meta -->
+    <header class="max-w-6xl mx-auto mb-16">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-zinc-900 pb-4 mb-8 text-xs text-zinc-500 gap-4">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-tcoalGreen animate-pulse"></span>
+                <span>STATUS: SISTEMAS OPERACIONAIS ATIVOS // BUSCANDO VAGA DE ESTÁGIO</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/Gravestone-Henry" target="_blank" class="hover:text-tcoalGreen transition-colors">GitHub</a>
+                <span class="text-zinc-800">/</span>
+                <a href="mailto:202603246851@alunos.estacio.br" class="hover:text-tcoalPink transition-colors">E-mail</a>
+                <span class="text-zinc-800">/</span>
+                <span class="text-zinc-400">Ciência da Computação</span>
+            </div>
+        </div>
+
+        <div class="p-5 rounded bg-zinc-900/40 border border-zinc-900 mb-8 max-w-3xl backdrop-blur">
+            <p class="text-zinc-300 text-xs md:text-sm leading-relaxed">
+                <span class="text-tcoalGreen font-semibold">&gt; sys.log:</span> "Sistemas colapsam, dados se perdem no tempo, mas a arquitetura de software permanece. Desenvolvedor FullStack focado em criar soluções robustas de ponta a ponta."
             </p>
         </div>
-        <h1 class="text-5xl md:text-8xl font-bold uppercase tracking-tighter">
-            HENRY <span class="text-purple-600 font-black">DEV</span>
-        </h1>
-        <p class="opacity-50 mt-2">// Gravestone: Construindo ferramentas, Plataformas, jogos e crises existenciais.</p>
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+                <h1 class="text-4xl md:text-7xl font-bold tracking-tight text-zinc-100 uppercase">
+                    HENRY <span class="text-tcoalPink font-extrabold">DEV</span>
+                </h1>
+                <p class="text-zinc-500 mt-2 text-sm">// Academic & FullStack Software Engineering Hub</p>
+            </div>
+            
+            <!-- Quick filters/badges -->
+            <div class="flex gap-2 text-xs">
+                <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded">Frontend</span>
+                <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded">Backend</span>
+                <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded">Python / JS</span>
+            </div>
+        </div>
     </header>
 
-    <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-purple-500 font-bold uppercase">Web Experience</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">FUNDAÇÃO 141</h2>
-            <p class="text-sm opacity-70 mb-6">Site imersivo estilo Lambe-Lambe sobre cultura urbana e versos de rap.</p>
-            <div class="flex gap-2">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Tailwind</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">JS</span>
-            </div>
-            <a href="https://gravestone-henry.github.io/fundacao141/" target="_blank" class="mt-6 inline-block text-cyan-400 hover:underline">Ver Projeto _</a>
-        </div>
+    <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-cyan-500 font-bold uppercase">Python / Desktop</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">Henry Chatbot</h2>
-            <p class="text-sm opacity-70 mb-6">Interface desktop com personalidade ácida e surtos automáticos.</p>
-            <div class="flex gap-2 mb-6">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Tkinter</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Logic</span>
+        <!-- PROJETO 1 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalGreen font-semibold uppercase tracking-wider">Web Experience</span>
+                    <span class="text-[10px] text-zinc-600">v1.0</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">FUNDAÇÃO 141</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Plataforma web imersiva de curadoria e expressão cultural urbana, desenvolvida com foco em design responsivo e interatividade visual utilizando técnicas de colagem digital estilo lambe-lambe.
+                </p>
             </div>
-            <div class="flex flex-col gap-2">
-                <a href="https://www.loom.com/share/dfe22255faad4c4d9aa225c7b29b12f1" target="_blank" class="text-cyan-400 hover:text-cyan-200 transition-colors font-bold tracking-widest text-xs">▷ ASSISTIR DEMONSTRAÇÃO</a>
-                <a href="https://github.com/Gravestone-Henry/chatbot-henry/blob/main/bot%20henry(v8).pyw" target="_blank" class="text-purple-400 hover:text-purple-200 transition-colors font-bold tracking-widest text-xs">{} VER CÓDIGO FONTE</a>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Tailwind</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">JavaScript</span>
+                </div>
+                <a href="https://gravestone-henry.github.io/fundacao141/" target="_blank" class="inline-flex items-center text-xs text-tcoalGreen hover:text-green-300 font-medium transition-colors">
+                    Acessar Aplicação <span class="ml-1 text-zinc-600">_</span>
+                </a>
             </div>
         </div>
 
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-yellow-500 font-bold uppercase">Game Dev</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">Skate Runner</h2>
-            <p class="text-sm opacity-70 mb-6">Jogo de corrida infinita com física de pulo e colisão em Canvas.</p>
-            <div class="flex gap-2">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">HTML5</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Canvas</span>
+        <!-- PROJETO 2 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalPink font-semibold uppercase tracking-wider">Python / Desktop</span>
+                    <span class="text-[10px] text-zinc-600">v8.0</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">Henry Chatbot</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Assistente virtual construído em ambiente desktop utilizando Python. Implementa lógica de estados conversacionais e uma interface gráfica customizada (Tkinter) focada em automação de interações.
+                </p>
             </div>
-            <a href="https://gravestone-henry.github.io/skaterunner/" target="_blank" class="mt-6 inline-block text-yellow-400 hover:underline">Jogar Agora _</a>
-        </div>
-
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-green-500 font-bold uppercase">Data & Logic</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">Gestão de Orçamento</h2>
-            <p class="text-sm opacity-70 mb-6">Aplicação para controle financeiro com cálculos automáticos e dashboard.</p>
-            <div class="flex gap-2">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">JS</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Local Storage</span>
-            </div>
-            <a href="https://gravestone-henry.github.io/gestaofinanceira/" target="_blank" class="mt-6 inline-block text-green-400 hover:underline">Acessar App _</a>
-        </div>
-
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-orange-500 font-bold uppercase">Education</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">Tabela Periódica</h2>
-            <p class="text-sm opacity-70 mb-6">Interface interativa para estudo de elementos com design responsivo.</p>
-            <div class="flex gap-2">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">CSS Grid</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Interatividade</span>
-            </div>
-            <a href="https://gravestone-henry.github.io/tabela-periodica/" target="_blank" class="mt-6 inline-block text-orange-400 hover:underline">Explorar Elementos _</a>
-        </div>
-
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-red-500 font-bold uppercase">FullStack Project</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">CryptoHenry-Bitcoin</h2>
-            <p class="text-sm opacity-70 mb-6">Programa que analisa em tempo real o valor da Crypto Bitcoin.</p>
-            <div class="flex gap-2 mb-6">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Python</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">JS,CSS3 & HTML5</span>
-            </div>
-            <div class="flex flex-col gap-2">
-                <a href="https://www.loom.com/share/94bf5d4cfca946359d312396e306af5d" target="_blank" class="text-cyan-400 hover:text-cyan-200 transition-colors font-bold tracking-widest text-xs">▷ ASSISTIR DEMONSTRAÇÃO</a>
-                <a href="https://github.com/Gravestone-Henry/Crypto-Henry" target="_blank" class="text-purple-400 hover:text-purple-200 transition-colors font-bold tracking-widest text-xs">{} VER CÓDIGO FONTE</a>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Tkinter</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Python Logic</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="https://www.loom.com/share/dfe22255faad4c4d9aa225c7b29b12f1" target="_blank" class="text-tcoalPink hover:text-pink-400 transition-colors font-medium text-xs">▷ ASSISTIR DEMONSTRAÇÃO</a>
+                    <a href="https://github.com/Gravestone-Henry/chatbot-henry/blob/main/bot%20henry(v8).pyw" target="_blank" class="text-tcoalGreen hover:text-green-400 transition-colors font-medium text-xs">{} VER CÓDIGO FONTE</a>
+                </div>
             </div>
         </div>
 
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-slate-500 font-bold uppercase">Web Storage / Dark Narrative</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">L-absence</h2>
-            <p class="text-sm opacity-70 mb-6">Diário web melancólico que utiliza persistência local para armazenar memórias e anotações.</p>
-            <div class="flex gap-2">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Local Storage</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">JS State</span>
+        <!-- PROJETO 3 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalGreen font-semibold uppercase tracking-wider">Game Development</span>
+                    <span class="text-[10px] text-zinc-600">Canvas API</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">Skate Runner</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Jogo de rolagem lateral (*side-scroller*) desenvolvido nativamente em JavaScript puro. Foco na implementação de loops de animação, mecânicas de física de pulo e detecção de colisão via HTML5 Canvas.
+                </p>
             </div>
-            <a href="https://gravestone-henry.github.io/L-absence/" target="_blank" class="mt-6 inline-block text-slate-400 hover:underline">Escrever no Vazio _</a>
-        </div>
-
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-emerald-500 font-bold uppercase">Archival System / Grunge</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">ALQUIMIA DO SABER</h2>
-            <p class="text-sm opacity-70 mb-6">Gestão de acervo físico com estética vintage e persistência local. Organização de pensamentos em forma de livros.</p>
-            <div class="flex gap-2 mb-6">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">LocalStorage</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Vanilla JS</span>
-            </div>
-            <div class="flex flex-col gap-2">
-                <a href="https://gravestone-henry.github.io/Alquimia-do-saber/" target="_blank" class="text-emerald-400 hover:text-emerald-200 transition-colors font-bold tracking-widest text-xs">▷ ABRIR O ACERVO _</a>
-                <a href="https://github.com/Gravestone-Henry/Alquimia-do-saber" target="_blank" class="text-purple-400 hover:text-purple-200 transition-colors font-bold tracking-widest text-xs">{} VER REPOSITÓRIO</a>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">HTML5</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Canvas</span>
+                </div>
+                <a href="https://gravestone-henry.github.io/skaterunner/" target="_blank" class="inline-flex items-center text-xs text-tcoalGreen hover:text-green-300 font-medium transition-colors">
+                    Jogar Demonstração <span class="ml-1 text-zinc-600">_</span>
+                </a>
             </div>
         </div>
 
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-indigo-400 font-bold uppercase italic">Real-Time / Melancholic</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">NUIT BLANCHE <span class="text-sm opacity-50 font-normal">(pustoy)</span></h2>
-            <p class="text-sm opacity-70 mb-6">Chat efêmero em tempo real. Uma sala vazia onde mensagens ecoam em uma interface com estética VHS e som de teclas mecânicas.</p>
-            <div class="flex gap-2 mb-6">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Supabase</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Audio API</span>
+        <!-- PROJETO 4 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalPink font-semibold uppercase tracking-wider">Data & Logic</span>
+                    <span class="text-[10px] text-zinc-600">Client-Side</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">Gestão de Orçamento</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Aplicação web para controle financeiro pessoal. Oferece cálculos dinâmicos, painel analítico gerencial e persistência de dados utilizando o armazenamento local do navegador (*LocalStorage*).
+                </p>
             </div>
-            <div class="flex flex-col gap-2">
-                <a href="https://gravestone-henry.github.io/nuitblanche/" target="_blank" class="text-indigo-400 hover:text-indigo-200 transition-colors font-bold tracking-widest text-xs">▷ ENTRAR NO VAZIO _</a>
-                <a href="https://github.com/Gravestone-Henry/nuitblanche" target="_blank" class="text-purple-400 hover:text-purple-200 transition-colors font-bold tracking-widest text-xs">{} INSPECIONAR SOMBRAS</a>
-            </div>
-        </div>
-
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-blue-400 font-bold uppercase">AI / Immersive Experience</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">LIMINAL AI SPACE</h2>
-            <p class="text-sm opacity-70 mb-6">Exploração de espaços liminais com IA integrada. Desenvolvido inteiramente via VS Code para criar uma atmosfera de desconforto digital.</p>
-            <div class="flex gap-2 mb-6">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">VS Code</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">AI Integration</span>
-            </div>
-            <div class="flex flex-col gap-2">
-                <a href="https://www.loom.com/share/f5abbf09988544e6b20edefae843a95c" target="_blank" class="text-blue-400 hover:text-blue-200 transition-colors font-bold tracking-widest text-xs">▷ ASSISTIR DEMONSTRAÇÃO</a>
-                <span class="text-zinc-600 font-bold tracking-widest text-xs italic cursor-not-allowed">[ CÓDIGO FONTE PRIVADO ]</span>
-            </div>
-        </div>
-        
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-pink-600 font-bold uppercase italic">Hyperpop / Scenecore Experience</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">REBZY_OVERLOAD</h2>
-            <p class="text-sm opacity-70 mb-6">Interface experimental imersiva baseada em "i'm so fucked help me please". Exploração de glitch-art, estados mentais digitais e caos visual.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Creative Coding</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">JS Glitch Engine</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Dynamic UI</span>
-            </div>
-            <div class="flex flex-col gap-2">
-                <a href="https://gravestone-henry.github.io/rebzyyx/index.html" target="_blank" class="text-pink-500 hover:text-pink-300 transition-colors font-bold tracking-widest text-xs">▷ ENTRAR NO ERRO _</a>
-                <a href="https://github.com/Gravestone-Henry/rebzyyx" target="_blank" class="text-purple-400 hover:text-purple-200 transition-colors font-bold tracking-widest text-xs">{} INSPECIONAR DECAIMENTO</a>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">JavaScript</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Local Storage</span>
+                </div>
+                <a href="https://gravestone-henry.github.io/gestaofinanceira/" target="_blank" class="inline-flex items-center text-xs text-tcoalPink hover:text-pink-300 font-medium transition-colors">
+                    Acessar Sistema <span class="ml-1 text-zinc-600">_</span>
+                </a>
             </div>
         </div>
 
-        <!-- NOVO PROJETO: THREATFLOW -->
-        <div class="project-card p-6 bg-zinc-900 rounded-xl transition-all border border-zinc-800">
-            <span class="text-xs text-cyan-400 font-bold uppercase italic">Cybersecurity / MITRE ATT&CK</span>
-            <h2 class="text-2xl font-bold mt-2 mb-4">THREATFLOW</h2>
-            <p class="text-sm opacity-70 mb-6">Showcase interativo sobre a anatomia de ataques cibernéticos. Mapeamento das 14 táticas do adversário com imersão técnica e visual neon.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">MITRE Framework</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Vanilla JS</span>
-                <span class="bg-black px-2 py-1 text-[10px] rounded border border-zinc-700">Hacker UI</span>
+        <!-- PROJETO 5 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalGreen font-semibold uppercase tracking-wider">Education</span>
+                    <span class="text-[10px] text-zinc-600">UI/UX</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">Tabela Periódica</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Ferramenta educacional interativa estruturada com CSS Grid avançado. Foco em arquitetura de dados químicos e adaptação de layout responsivo para múltiplos dispositivos.
+                </p>
             </div>
-            <div class="flex flex-col gap-2">
-                <a href="https://gravestone-henry.github.io/threatflow-showcase/" target="_blank" class="text-cyan-400 hover:text-cyan-200 transition-colors font-bold tracking-widest text-xs">▷ INICIAR SEQUÊNCIA _</a>
-                <a href="https://github.com/Gravestone-Henry/threatflow-showcase" target="_blank" class="text-purple-400 hover:text-purple-200 transition-colors font-bold tracking-widest text-xs">{} ANALISAR ARQUIVOS</a>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">CSS Grid</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">DOM Manipulation</span>
+                </div>
+                <a href="https://gravestone-henry.github.io/tabela-periodica/" target="_blank" class="inline-flex items-center text-xs text-tcoalGreen hover:text-green-300 font-medium transition-colors">
+                    Explorar Módulo <span class="ml-1 text-zinc-600">_</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- PROJETO 6 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalPink font-semibold uppercase tracking-wider">FullStack API Integration</span>
+                    <span class="text-[10px] text-zinc-600">Scripting</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">CryptoHenry-Bitcoin</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Sistema híbrido estruturado em Python e módulos web para monitoramento de ativos financeiros digitais em tempo real, realizando requisições assíncronas de cotação de mercado.
+                </p>
+            </div>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Python API</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Frontend Web</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="https://www.loom.com/share/94bf5d4cfca946359d312396e306af5d" target="_blank" class="text-tcoalPink hover:text-pink-400 transition-colors font-medium text-xs">▷ ASSISTIR DEMONSTRAÇÃO</a>
+                    <a href="https://github.com/Gravestone-Henry/Crypto-Henry" target="_blank" class="text-tcoalGreen hover:text-green-400 transition-colors font-medium text-xs">{} VER CÓDIGO FONTE</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJETO 7 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-zinc-400 font-semibold uppercase tracking-wider">State Management</span>
+                    <span class="text-[10px] text-zinc-600">Narrative UI</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">L-absence</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Aplicação web voltada ao registro pessoal de notas e memórias. Explora a persistência local com gerenciamento avançado de estado no front-end para reter informações textuais.
+                </p>
+            </div>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">LocalStorage</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">State API</span>
+                </div>
+                <a href="https://gravestone-henry.github.io/L-absence/" target="_blank" class="inline-flex items-center text-xs text-zinc-300 hover:text-zinc-100 font-medium transition-colors">
+                    Acessar Diário <span class="ml-1 text-zinc-600">_</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- PROJETO 8 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalGreen font-semibold uppercase tracking-wider">Archival System</span>
+                    <span class="text-[10px] text-zinc-600">Database Mock</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">ALQUIMIA DO SABER</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Sistema de inventário e gestão de acervo bibliográfico estruturado inteiramente no cliente. Realiza operações de CRUD simuladas com foco na organização estruturada de dados textuais.
+                </p>
+            </div>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Vanilla JS</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">CRUD System</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="https://gravestone-henry.github.io/Alquimia-do-saber/" target="_blank" class="text-tcoalGreen hover:text-green-300 transition-colors font-medium text-xs">▷ ABRIR O ACERVO _</a>
+                    <a href="https://github.com/Gravestone-Henry/Alquimia-do-saber" target="_blank" class="text-tcoalPink hover:text-pink-300 transition-colors font-medium text-xs">{} VER REPOSITÓRIO</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJETO 9 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalPink font-semibold uppercase tracking-wider">Real-Time WebSockets</span>
+                    <span class="text-[10px] text-zinc-600">Supabase</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">NUIT BLANCHE</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Ambiente de chat efêmero com sincronização em tempo real. Utiliza backend as a service para mensageria instantânea e integração com Web Audio API para efeitos sonoros dinâmicos.
+                </p>
+            </div>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Supabase</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Audio API</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="https://gravestone-henry.github.io/nuitblanche/" target="_blank" class="text-tcoalPink hover:text-pink-300 transition-colors font-medium text-xs">▷ ENTRAR NO CANAL _</a>
+                    <a href="https://github.com/Gravestone-Henry/nuitblanche" target="_blank" class="text-tcoalGreen hover:text-green-300 transition-colors font-medium text-xs">{} INSPECIONAR CÓDIGO</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJETO 10 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalGreen font-semibold uppercase tracking-wider">AI Integration</span>
+                    <span class="text-[10px] text-zinc-600">Experimental</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">LIMINAL AI SPACE</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Interface interativa voltada à exploração de ambientes gerados com assistência de Inteligência Artificial, priorizando testes de layout e modelagem de experiência de usuário imersiva.
+                </p>
+            </div>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">AI Prompts</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Frontend</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="https://www.loom.com/share/f5abbf09988544e6b20edefae843a95c" target="_blank" class="text-tcoalGreen hover:text-green-300 transition-colors font-medium text-xs">▷ ASSISTIR DEMONSTRAÇÃO</a>
+                    <span class="text-zinc-600 font-medium text-xs cursor-not-allowed">[ REPOSITÓRIO PRIVADO ]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJETO 11 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalPink font-semibold uppercase tracking-wider">Creative Coding</span>
+                    <span class="text-[10px] text-zinc-600">Glitch Engine</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">REBZY_OVERLOAD</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Mecanismo experimental focado no desenvolvimento de manipulação visual dinâmica via código. Implementa algoritmos de distorção de elementos de interface e processamento de estado em tempo real.
+                </p>
+            </div>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Creative Engine</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">JS Glitch</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="https://gravestone-henry.github.io/rebzyyx/index.html" target="_blank" class="text-tcoalPink hover:text-pink-300 transition-colors font-medium text-xs">▷ EXECUTAR MOTOR _</a>
+                    <a href="https://github.com/Gravestone-Henry/rebzyyx" target="_blank" class="text-tcoalGreen hover:text-green-300 transition-colors font-medium text-xs">{} INSPECIONAR FONTE</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJETO 12 -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalGreen font-semibold uppercase tracking-wider">Cybersecurity Showcase</span>
+                    <span class="text-[10px] text-zinc-600">MITRE Framework</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">THREATFLOW</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Ferramenta de visualização e mapeamento baseada nas táticas do framework MITRE ATT&CK. Destinada à análise estruturada e simulação conceitual da anatomia de ameaças cibernéticas.
+                </p>
+            </div>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">MITRE Framework</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Security UI</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="https://gravestone-henry.github.io/threatflow-showcase/" target="_blank" class="text-tcoalGreen hover:text-green-300 transition-colors font-medium text-xs">▷ INICIAR PROTOCOLO _</a>
+                    <a href="https://github.com/Gravestone-Henry/threatflow-showcase" target="_blank" class="text-tcoalPink hover:text-pink-300 transition-colors font-medium text-xs">{} ANALISAR ARQUIVOS</a>
+                </div>
             </div>
         </div>
 
     </main>
 
-    <footer class="max-w-4xl mx-auto mt-32 pt-10 border-t border-zinc-900 text-center">
-        <p class="text-sm opacity-30">Desenvolvido sob custódia do Henry</p>
-        <div class="mt-4 flex justify-center gap-6">
-            <a href="https://github.com/Gravestone-Henry" class="hover:text-purple-500 transition-colors italic">GitHub</a>
-            <a href="mailto:202603246851@alunos.estacio.br" class="hover:text-cyan-500 transition-colors italic">E-Mail</a>
+    <!-- Professional Footer -->
+    <footer class="max-w-4xl mx-auto mt-28 pt-8 border-t border-zinc-900 text-center">
+        <p class="text-xs text-zinc-600">// DESENVOLVIDO SOB A CUSTÓDIA DE HENRY — 2026</p>
+        <div class="mt-4 flex justify-center gap-6 text-xs">
+            <a href="https://github.com/Gravestone-Henry" target="_blank" class="text-zinc-400 hover:text-tcoalGreen transition-colors">GitHub Repository</a>
+            <a href="mailto:202603246851@alunos.estacio.br" class="text-zinc-400 hover:text-tcoalPink transition-colors">Direct Contact</a>
         </div>
     </footer>
 
