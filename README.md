@@ -25,7 +25,7 @@ Sou estudante de **Ciência da Computação** (Estácio) e Desenvolvedor **FullS
 
 ##  Visão Geral dos Projetos
 
-O hub principal agrupa **14 projetos** divididos em categorias estratégicas:
+O hub principal agrupa **15 projetos** divididos em categorias estratégicas:
 
 1. **FUNDAÇÃO 141** *(Web Experience)* — Plataforma web imersiva com design responsivo e colagem digital. [[Demo]](https://gravestone-henry.github.io/fundacao141/)
 2. **Henry Chatbot** *(Python / Desktop)* — Assistente virtual desktop com lógica de estados e Tkinter. [[Código]](https://github.com/Gravestone-Henry/chatbot-henry)
@@ -41,6 +41,7 @@ O hub principal agrupa **14 projetos** divididos em categorias estratégicas:
 12. **THREATFLOW** *(Cybersecurity)* — Ferramenta de mapeamento baseada no framework MITRE ATT&CK. [[Protocolo]](https://gravestone-henry.github.io/threatflow-showcase/)
 13. **NULL-CHAN** *(Real-Time Backend)* — Chat/chan com Node.js e banco JSON implantado no Render. [[Acessar]](https://nullchan.onrender.com)
 14. **Task CLI Manager** *(Backend & Database)* — Gerenciador de tarefas via terminal em Python com SQLite3. [[Código]](https://github.com/Gravestone-Henry/portfolio_tasks.db)
+15. **PostgreSQL Academic DB** *(Database & PowerShell)* — Configuração e gerenciamento de banco relacional via PowerShell e SQL. [[Demo]](https://www.loom.com/share/a9ab4479d3b14fc499043e8cf8e3ea1b) [[Repositório]](https://github.com/Gravestone-Henry/Curso-DB)
 
 ---
 
