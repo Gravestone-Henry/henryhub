@@ -91,17 +91,42 @@
                 <p class="text-zinc-500 mt-2 text-sm">// Academic & FullStack Software Engineering Hub</p>
             </div>
             
-            <!-- Quick filters corrigidos para a quantidade real de 14 projetos -->
+            <!-- Quick filters atualizados para a quantidade real de 15 projetos -->
             <div class="flex flex-wrap gap-2 text-xs" id="filter-container">
-                <button onclick="filterProjects('all', this)" class="filter-btn px-3 py-1 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Todos [14]</button>
+                <button onclick="filterProjects('all', this)" class="filter-btn px-3 py-1 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Todos [15]</button>
                 <button onclick="filterProjects('Frontend', this)" class="filter-btn px-3 py-1 bg-zinc-900/50 border border-zinc-900 text-zinc-400 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Frontend [6]</button>
-                <button onclick="filterProjects('Backend', this)" class="filter-btn px-3 py-1 bg-zinc-900/50 border border-zinc-900 text-zinc-400 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Backend [5]</button>
+                <button onclick="filterProjects('Backend', this)" class="filter-btn px-3 py-1 bg-zinc-900/50 border border-zinc-900 text-zinc-400 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Backend [6]</button>
                 <button onclick="filterProjects('Python', this)" class="filter-btn px-3 py-1 bg-zinc-900/50 border border-zinc-900 text-zinc-400 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Python [3]</button>
             </div>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+
+        <!-- PROJETO NOVO: POSTGRESQL & POWERSHELL -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between" data-category="Backend">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalGreen font-semibold uppercase tracking-wider">Database & PowerShell</span>
+                    <span class="text-[10px] text-zinc-600">PostgreSQL</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">PostgreSQL Academic DB</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Configuração e gerenciamento de banco de dados relacional via PowerShell. Inicialização manual de instância (`initdb`), controle de servidor (`pg_ctl`) e modelagem DDL/DML para ambiente acadêmico.
+                </p>
+            </div>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">PostgreSQL</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">PowerShell</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">SQL DDL/DML</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="https://www.loom.com/share/a9ab4479d3b14fc499043e8cf8e3ea1b" target="_blank" class="text-tcoalPink hover:text-pink-400 transition-colors font-medium text-xs">▷ ASSISTIR DEMONSTRAÇÃO (TERMINAL)</a>
+                    <a href="https://github.com/Gravestone-Henry/Curso-DB" target="_blank" class="text-tcoalGreen hover:text-green-400 transition-colors font-medium text-xs">{} VER REPOSITÓRIO GITHUB</a>
+                </div>
+            </div>
+        </div>
 
         <!-- PROJETO 1 -->
         <div class="project-card p-6 rounded-lg flex flex-col justify-between" data-category="Frontend">
@@ -437,7 +462,7 @@
 
     </main>
 
-    <!-- Professional Footer -->
+    <!--  Footer -->
     <footer class="max-w-4xl mx-auto mt-28 pt-8 border-t border-zinc-900 text-center">
         <p class="text-xs text-zinc-600">// DESENVOLVIDO SOB A CUSTÓDIA DE HENRY — 2026</p>
         <div class="mt-4 flex justify-center gap-6 text-xs">
@@ -446,23 +471,23 @@
         </div>
     </footer>
 
-    <!-- Script de Filtro Funcional Atualizado -->
+
     <script>
         function filterProjects(category, buttonElement) {
             const cards = document.querySelectorAll('#projects-grid > div');
             const buttons = document.querySelectorAll('.filter-btn');
 
-            // Reseta todos os botões para o estado inativo
+            // Reset
             buttons.forEach(btn => {
                 btn.classList.remove('bg-zinc-900', 'border-zinc-800', 'text-zinc-300');
                 btn.classList.add('bg-zinc-900/50', 'border-zinc-900', 'text-zinc-400');
             });
 
-            // Ativa o botão clicado de forma segura usando o parâmetro passado
+            // funf o botão
             buttonElement.classList.remove('bg-zinc-900/50', 'border-zinc-900', 'text-zinc-400');
             buttonElement.classList.add('bg-zinc-900', 'border-zinc-800', 'text-zinc-300');
 
-            // Filtra os cards visíveis
+            // Filtrar os card :P
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
                     card.style.display = 'flex';
