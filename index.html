@@ -91,19 +91,43 @@
                 <p class="text-zinc-500 mt-2 text-sm">// Academic & FullStack Software Engineering Hub</p>
             </div>
             
-            <!-- Quick filters atualizados para a quantidade real de 15 projetos -->
+            <!-- Quick filters atualizados para a quantidade real de 16 projetos -->
             <div class="flex flex-wrap gap-2 text-xs" id="filter-container">
-                <button onclick="filterProjects('all', this)" class="filter-btn px-3 py-1 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Todos [15]</button>
+                <button onclick="filterProjects('all', this)" class="filter-btn px-3 py-1 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Todos [16]</button>
                 <button onclick="filterProjects('Frontend', this)" class="filter-btn px-3 py-1 bg-zinc-900/50 border border-zinc-900 text-zinc-400 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Frontend [6]</button>
                 <button onclick="filterProjects('Backend', this)" class="filter-btn px-3 py-1 bg-zinc-900/50 border border-zinc-900 text-zinc-400 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Backend [6]</button>
-                <button onclick="filterProjects('Python', this)" class="filter-btn px-3 py-1 bg-zinc-900/50 border border-zinc-900 text-zinc-400 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Python [3]</button>
+                <button onclick="filterProjects('Python', this)" class="filter-btn px-3 py-1 bg-zinc-900/50 border border-zinc-900 text-zinc-400 rounded hover:border-tcoalGreen transition-colors cursor-pointer">Python [4]</button>
             </div>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
 
-        <!-- PROJETO NOVO: POSTGRESQL & POWERSHELL -->
+        <!-- PROJETO NOVO: EXPLORADOR AMOLED (PYTHON) -->
+        <div class="project-card p-6 rounded-lg flex flex-col justify-between" data-category="Python">
+            <div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] text-tcoalPink font-semibold uppercase tracking-wider">Python Desktop / UI</span>
+                    <span class="text-[10px] text-zinc-600">AMOLED Theme</span>
+                </div>
+                <h2 class="text-xl font-bold text-zinc-100 mb-2">Explorador Amoled</h2>
+                <p class="text-xs text-zinc-400 mb-6 leading-relaxed">
+                    Gerenciador e explorador de arquivos desktop desenvolvido em Python. Possui design visual focado em modo escuro absoluto (AMOLED), oferecendo navegação fluida, visual livre e flexível comparado aos gerenciadores tradicionais.
+                </p>
+            </div>
+            <div>
+                <div class="flex gap-1.5 mb-6">
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Python</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Desktop App</span>
+                    <span class="bg-zinc-950 px-2 py-0.5 text-[10px] text-zinc-400 rounded border border-zinc-800">Executable (.exe)</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a href="https://github.com/Gravestone-Henry/exploradoramoled" target="_blank" class="text-tcoalPink hover:text-pink-400 transition-colors font-medium text-xs">{} BAIXAR .EXE & REPOSITÓRIO</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJETO: POSTGRESQL & POWERSHELL -->
         <div class="project-card p-6 rounded-lg flex flex-col justify-between" data-category="Backend">
             <div>
                 <div class="flex justify-between items-center mb-3">
@@ -483,11 +507,11 @@
                 btn.classList.add('bg-zinc-900/50', 'border-zinc-900', 'text-zinc-400');
             });
 
-            // funf o botão
+            // Ativa o botão selecionado
             buttonElement.classList.remove('bg-zinc-900/50', 'border-zinc-900', 'text-zinc-400');
             buttonElement.classList.add('bg-zinc-900', 'border-zinc-800', 'text-zinc-300');
 
-            // Filtrar os card :P
+            // Filtrar os cards
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
                     card.style.display = 'flex';
