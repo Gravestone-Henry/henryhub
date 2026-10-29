@@ -3,7 +3,6 @@
 > *"Sistemas colapsam, dados se perdem no tempo, mas a arquitetura de software permanece."*
 
 [![Status: Operacional](https://img.shields.io/badge/STATUS-SISTEMAS_OPERACIONAIS_ATIVOS-22c55e?style=flat-square&logo=terminal)](https://github.com/Gravestone-Henry)
-[![Buscando Se Aprimorar](https://img.shields.io/badge/VAGA-BUSCANDO_ESTÁGIO-ec4899?style=flat-square&logo=target)](mailto:202603246851@alunos.estacio.br)
 [![Ciência da Computação](https://img.shields.io/badge/CURSO-CIÊNCIA_DA_COMPUTAÇÃO-blue?style=flat-square&logo=bookstack)](https://github.com/Gravestone-Henry)
 
 ---
